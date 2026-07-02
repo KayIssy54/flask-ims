@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Organic Almond Milk",
+        "barcode": "737628064502",
+        "price": 350,
+        "stock": 25
+    },
+    {
+        "id": 2,
+        "name": "Whole Wheat Bread",
+        "barcode": "3017620422003",
+        "price": 180,
+        "stock": 40
+    }
+]
