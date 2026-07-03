@@ -12,5 +12,12 @@
         "barcode": "3017620422003",
         "price": 180,
         "stock": 40
+    },
+    {
+        "id": 3,
+        "name": "Manji Biscuits",
+        "barcode": "538038302833",
+        "price": 500.0,
+        "stock": 40
     }
 ]

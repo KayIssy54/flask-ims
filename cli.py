@@ -116,7 +116,6 @@ def delete_item():
 
 
 def find_product():
-    def find_product():
     barcode = input("Enter Product Barcode: ")
 
     response = requests.get(f"{BASE_URL}/product/{barcode}")
