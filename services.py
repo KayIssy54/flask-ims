@@ -5,9 +5,7 @@ import requests
 DATA_FILE = "inventory.json"
 
 
-# ----------------------------
 # Read inventory
-# ----------------------------
 def read_inventory():
 
     if not os.path.exists(DATA_FILE):
@@ -19,26 +17,20 @@ def read_inventory():
         return json.load(f)
 
 
-# ----------------------------
 # Save inventory
-# ----------------------------
 def save_inventory(data):
 
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
 
-# ----------------------------
 # Get all
-# ----------------------------
 def get_inventory():
 
     return read_inventory()
 
 
-# ----------------------------
 # Get one
-# ----------------------------
 def get_item(item_id):
 
     inventory = read_inventory()
@@ -51,9 +43,7 @@ def get_item(item_id):
     return None
 
 
-# ----------------------------
 # Add item
-# ----------------------------
 def add_item(data):
 
     inventory = read_inventory()
@@ -78,10 +68,8 @@ def add_item(data):
     return new_item
 
 
-# ----------------------------
 # Update item
-# ----------------------------
-def update_item(item_id, data):
+xdef update_item(item_id, data):
 
     inventory = read_inventory()
 
@@ -101,9 +89,7 @@ def update_item(item_id, data):
     return None
 
 
-# ----------------------------
 # Delete item
-# ----------------------------
 def delete_item(item_id):
 
     inventory = read_inventory()
@@ -121,9 +107,7 @@ def delete_item(item_id):
     return False
 
 
-# ----------------------------
 # OpenFoodFacts API
-# ----------------------------
 def fetch_product_from_api(barcode):
 
     url = f"https://world.openfoodfacts.org/api/v0/product/{barcode}.json"
