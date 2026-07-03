@@ -1,16 +1,44 @@
 [
     {
-        "id": 1,
-        "name": "Organic Almond Milk",
-        "barcode": "737628064502",
-        "price": 350,
-        "stock": 25
-    },
-    {
         "id": 2,
         "name": "Whole Wheat Bread",
         "barcode": "3017620422003",
         "price": 180,
         "stock": 40
+    },
+    {
+        "id": 3,
+        "name": "Manji Biscuits",
+        "barcode": "538038302833",
+        "price": 500.0,
+        "stock": 40
+    },
+    {
+        "id": 4,
+        "name": "Test Product",
+        "barcode": "123456789",
+        "price": 100,
+        "stock": 20
+    },
+    {
+        "id": 5,
+        "name": "Test Product",
+        "barcode": "123456789",
+        "price": 100,
+        "stock": 20
+    },
+    {
+        "id": 6,
+        "name": "Test Product",
+        "barcode": "123456789",
+        "price": 100,
+        "stock": 20
+    },
+    {
+        "id": 7,
+        "name": "Test Product",
+        "barcode": "123456789",
+        "price": 100,
+        "stock": 20
     }
 ]
