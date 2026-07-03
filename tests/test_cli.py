@@ -5,14 +5,9 @@ import cli
 
 class CLITestCase(unittest.TestCase):
 
-    @patch("builtins.input", side_effect=["6"])
+    @patch("builtins.input", side_effect=["7"])
     def test_exit(self, mock_input):
-
-        try:
-            cli.main()
-        except SystemExit:
-            pass
-
+        cli.main()
         self.assertTrue(True)
 
 
