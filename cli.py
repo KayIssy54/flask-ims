@@ -116,24 +116,55 @@ def delete_item():
 
 
 def find_product():
+    def find_product():
     barcode = input("Enter Product Barcode: ")
 
-    response = requests.get(
-        f"{BASE_URL}/product/{barcode}"
-    )
+    response = requests.get(f"{BASE_URL}/product/{barcode}")
 
-    if response.status_code == 200:
-        product = response.json()
+    if response.status_code != 200:
+        print("Product not found")
+        return
 
-        print("\n--- Product Details ---")
-        print(f"Name: {product.get('product_name')}")
-        print(f"Brand: {product.get('brands')}")
-        print(f"Ingredients: {product.get('ingredients')}")
-        print(f"Quantity: {product.get('quantity')}")
-        print(f"Categories: {product.get('categories')}")
+    product = response.json()
+
+    print("\n--- Product Details ---")
+    print(f"Name: {product.get('product_name')}")
+    print(f"Brand: {product.get('brands')}")
+    print(f"Ingredients: {product.get('ingredients')}")
+    print(f"Quantity: {product.get('quantity')}")
+    print(f"Categories: {product.get('categories')}")
+
+    choice = input("\nAdd this product to inventory? (Y/N): ").lower()
+
+    if choice == "y":
+
+        try:
+            price = float(input("Enter Price: "))
+            stock = int(input("Enter Stock Quantity: "))
+        except ValueError:
+            print("Invalid price or stock.")
+            return
+
+        data = {
+            "name": product.get("product_name"),
+            "barcode": barcode,
+            "price": price,
+            "stock": stock
+        }
+
+        save_response = requests.post(
+            f"{BASE_URL}/inventory",
+            json=data
+        )
+
+        if save_response.status_code == 201:
+            print("\nProduct successfully added to inventory!")
+        else:
+            print("\nFailed to add product.")
 
     else:
-        print("Product not found")
+        print("Product not saved.")
+   
 
 
 def main():

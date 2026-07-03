@@ -77,3 +77,7 @@ def get_product(barcode):
         return jsonify(product)
 
     return jsonify({"error": "Product not found"}), 404
+
+
+
+
