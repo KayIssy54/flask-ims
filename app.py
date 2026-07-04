@@ -1,12 +1,15 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from api import inventory_bp
 
 app = Flask(__name__)
 
-# Register the inventory blueprint
+# Enable CORS
+CORS(app)
+
+# Register blueprint
 app.register_blueprint(inventory_bp)
 
-# Home route
 @app.route("/", methods=["GET"])
 def home():
     return jsonify({
@@ -21,7 +24,6 @@ def home():
             "GET Product from OpenFoodFacts": "/product/<barcode>"
         }
     })
-
 
 if __name__ == "__main__":
     app.run(debug=True)

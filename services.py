@@ -69,7 +69,7 @@ def add_item(data):
 
 
 # Update item
-xdef update_item(item_id, data):
+def update_item(item_id, data):
 
     inventory = read_inventory()
 
@@ -109,18 +109,22 @@ def delete_item(item_id):
 
 # OpenFoodFacts API
 def fetch_product_from_api(barcode):
-
     url = f"https://world.openfoodfacts.org/api/v0/product/{barcode}.json"
 
-    response = requests.get(url)
+    headers = {
+        "User-Agent": "InventoryManagementSystem/1.0 (Student Flask Project)"
+    }
+
+    response = requests.get(url, headers=headers)
 
     if response.status_code != 200:
+        print("HTTP Status:", response.status_code)
+        print(response.text)
         return None
 
     data = response.json()
 
-    if data["status"] == 1:
-
+    if data.get("status") == 1:
         product = data["product"]
 
         return {
@@ -128,7 +132,7 @@ def fetch_product_from_api(barcode):
             "brands": product.get("brands"),
             "ingredients": product.get("ingredients_text"),
             "quantity": product.get("quantity"),
-            "categories": product.get("categories")
+            "categories": product.get("categories"),
         }
 
     return None
