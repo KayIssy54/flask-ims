@@ -1,7 +1,7 @@
 [
     {
         "id": 2,
-        "name": "Whole Wheat Bread",
+        "name": "Nutella",
         "barcode": "3017620422003",
         "price": 180,
         "stock": 40
@@ -12,33 +12,5 @@
         "barcode": "538038302833",
         "price": 500.0,
         "stock": 40
-    },
-    {
-        "id": 4,
-        "name": "Test Product",
-        "barcode": "123456789",
-        "price": 100,
-        "stock": 20
-    },
-    {
-        "id": 5,
-        "name": "Test Product",
-        "barcode": "123456789",
-        "price": 100,
-        "stock": 20
-    },
-    {
-        "id": 6,
-        "name": "Test Product",
-        "barcode": "123456789",
-        "price": 100,
-        "stock": 20
-    },
-    {
-        "id": 7,
-        "name": "Test Product",
-        "barcode": "123456789",
-        "price": 100,
-        "stock": 20
     }
 ]

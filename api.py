@@ -70,14 +70,12 @@ def remove_item(item_id):
 # Fetch from OpenFoodFacts
 @inventory_bp.route("/product/<barcode>", methods=["GET"])
 def get_product(barcode):
-
     product = fetch_product_from_api(barcode)
 
     if product:
         return jsonify(product)
 
     return jsonify({"error": "Product not found"}), 404
-
 
 
 
