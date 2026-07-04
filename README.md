@@ -1,100 +1,201 @@
-# Inventory Management System REST API
+# Inventory Management System
 
 ## Project Overview
 
-The Inventory Management System is a Flask-based REST API developed to help a small retail business manage its inventory. The application allows administrators to create, view, update, and delete inventory items while also integrating with the OpenFoodFacts API to retrieve real-time product information using a barcode.
+The Inventory Management System is a full-stack web application developed to help small retail businesses efficiently manage their inventory. The application consists of a Flask REST API backend and a React frontend that provide an intuitive interface for managing products.
 
-A command-line interface (CLI) is included to enable users to interact with the API, and unit tests are provided to verify that the application's features work correctly.
+The system allows users to:
+
+- View all inventory items
+- Add new products
+- Update existing products
+- Delete products
+- Search products using the OpenFoodFacts API by barcode
+- Manage inventory through both a web interface and a Command Line Interface (CLI)
+
+The project demonstrates full-stack development using React for the frontend and Flask for the backend while implementing RESTful API principles.
 
 
 
 ## Features
 
-* RESTful API built with Flask
-* Create, Read, Update, and Delete (CRUD) inventory items
-* Retrieve all inventory items
-* Retrieve a single inventory item by ID
-* Fetch product information from the OpenFoodFacts API using a barcode
-* Command Line Interface (CLI) for interacting with the API
-* Unit testing using Python's unittest framework
+### Backend
+
+- Flask REST API
+- CRUD operations for inventory items
+- JSON-based data storage
+- OpenFoodFacts API integration
+- Command Line Interface (CLI)
+- Unit testing
+
+### Frontend
+
+- React + Vite user interface
+- View inventory
+- Add products
+- Update products
+- Delete products
+- Search products using OpenFoodFacts
+- Responsive inventory cards
+- Axios for API communication
 
 
 
 ## Technologies Used
 
-* Python 3
-* Flask
-* Requests
-* unittest
-* Git & GitHub
+### Backend
 
+- Python 3
+- Flask
+- Flask-CORS
+- Requests
+- unittest
 
+### Frontend
 
-## Project Structure
+- React
+- Vite
+- Axios
+- JavaScript
+- HTML5
+- CSS3
 
+### Version Control
 
-InventoryManagementSystem/
-│
-├── app.py
-├── inventory.py
-├── cli.py
-├── requirements.txt
-├── README.md
-├── tests/
-│   └── test_app.py
-└── .gitignore
-
+- Git
+- GitHub
 
 ## Installation
 
-1. Clone the repository:
-2. Navigate into the project directory:
-3. Create a virtual environment:
-   python -m venv venv
+### 1. Clone the Repository
+### 2. Create a Virtual Environment
 
-4. Install the required packages:
+bash:
+python3 -m venv venv
+
+
+Activate it:
+bash
+venv\Scripts\activate
+
+### 3. Install Backend Dependencies
+
+bash:
+pip install -r requirements.txt
+
+
+
+### 4. Install Frontend Dependencies
 
 bash
-pip install -r requirements.txt
+cd frontend
+npm install
+
 
 
 ## Running the Application
 
-Start the Flask server:
+### Backend
+
+From the project root:
 
 bash
-python app.py
+python3 app.py
 
 
-The API will run locally at:
+The Flask API runs on:
+
 http://127.0.0.1:5000
 
 
 
-## Running the CLI
+### Frontend
 
-Start the Flask server first, then run:
+Open another terminal.
+
+Navigate to the frontend folder:
 
 bash
-python cli.py
+cd frontend
 
 
-The CLI allows you to:
+Start the React application:
 
-* View inventory
-* Add inventory items
-* Update inventory items
-* Delete inventory items
-* Search products using a barcode
+bash
+npm run dev
+
+
+The application runs on:
+http://localhost:5173
+
+
+
+## REST API Endpoints
+
+Method  Endpoint        Description 
+GET     inventory      Get all inventory items 
+GET     inventory<id> Get one inventory item 
+POST    inventory      Create a new inventory item 
+PATCH   inventory<id> Update an inventory item 
+DELETE  inventory<id> Delete an inventory item 
+GET     product<barcode> Retrieve product details from OpenFoodFacts 
+
+
+
+## CLI
+
+The application also includes a Command Line Interface.
+
+Run:
+
+bash
+python3 cli.py
+
+Available operations include:
+
+- View inventory
+- Add products
+- Update products
+- Delete products
+- Search products by barcode
 
 
 
 ## Running Tests
 
-Run all tests using:
+Run all tests with:
 
 bash
 python -m unittest discover tests
 
 
+
+
+## OpenFoodFacts Integration
+
+The application integrates with the OpenFoodFacts API, allowing users to search for product information using a barcode.
+
+Returned information includes:
+
+- Product name
+- Brand
+- Ingredients
+- Quantity
+- Categories
+
+Users can then add the retrieved product to the local inventory.
+
+
+
+## Future Improvements
+
+- User authentication
+- SQLite or PostgreSQL database
+- Product image uploads
+- Dashboard with charts
+- Barcode scanner integration
+- Inventory reports
+- Low-stock notifications
+- Product categories
+- Search and filtering
 
