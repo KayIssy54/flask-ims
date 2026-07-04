@@ -3,6 +3,7 @@ import {
   getInventory,
   deleteItem,
 } from "../api/inventory";
+import UpdateItem from "./UpdateItem";
 
 function Inventory() {
   const [items, setItems] = useState([]);
@@ -26,10 +27,16 @@ function Inventory() {
       <h2>Inventory List</h2>
 
       {items.map((item) => (
-        <div key={item.id} style={{ border: "1px solid black", margin: 10, padding: 10 }}>
+        <div key={item.id} className="card">
           <h3>{item.name}</h3>
-          <p>Price: {item.price}</p>
-          <p>Stock: {item.stock}</p>
+
+          <p><strong>Barcode:</strong> {item.barcode}</p>
+
+          <p><strong>Price:</strong> Ksh {item.price}</p>
+
+          <p><strong>Stock:</strong> {item.stock}</p>
+
+          <UpdateItem item={item} />
 
           <button onClick={() => handleDelete(item.id)}>
             Delete
